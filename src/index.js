@@ -14,9 +14,13 @@
 import React from  'react';
 //ReactDOM es el analogo de appendChild
 import ReactDOM from 'react-dom';
+//importamos nuestro badge
+import Badge from './components/Badge'
+
 // en este caso quitamos el jsx y utilizamos createElement
 //pasamos los argurmentos
 //React.createElement (tipo de elemento,{props}, contenido)
+const badge = <Badge/>
 const element = React.createElement('a', {href:'https://platzi.com'}, 'Ir a platzi')
 const container = document.getElementById ('app')
 const name = "Gerson"
@@ -27,5 +31,5 @@ const container2 = document.getElementById ('nombre')
 //ReactDOM.render (que vamos a renderizar, donde lo vamos a renderizar)
 
 ReactDOM.render  (element, container);
-ReactDOM.render (jsx, container2);
+ReactDOM.render (badge, container2);
 
