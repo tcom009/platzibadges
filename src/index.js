@@ -14,12 +14,18 @@
 import React from  'react';
 //ReactDOM es el analogo de appendChild
 import ReactDOM from 'react-dom';
-//el siguiente h1 es JSX 
-const element = <h1> Hello, Platzi Badges, from react</h1>;
+// en este caso quitamos el jsx y utilizamos createElement
+//pasamos los argurmentos
+//React.createElement (tipo de elemento,{props}, contenido)
+const element = React.createElement('a', {href:'https://platzi.com'}, 'Ir a platzi')
 const container = document.getElementById ('app')
+const name = "Gerson"
+//ejemplo con jsx directo
+const jsx = <h1>Hola soy,<a href="https://facebook.com">{name}</a>  </h1>
+const container2 = document.getElementById ('nombre')
 
 //ReactDOM.render (que vamos a renderizar, donde lo vamos a renderizar)
 
 ReactDOM.render  (element, container);
-
+ReactDOM.render (jsx, container2);
 
