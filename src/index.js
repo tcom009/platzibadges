@@ -16,16 +16,23 @@ import React from  'react';
 import ReactDOM from 'react-dom';
 //importamos nuestro badge
 import Badge from './components/Badge'
+//importamos bootstrap
+import 'bootstrap/dist/css/bootstrap.css'
 
 // en este caso quitamos el jsx y utilizamos createElement
 //pasamos los argurmentos
 //React.createElement (tipo de elemento,{props}, contenido)
-const badge = <Badge/>
+const badge = <Badge 
+                name="gerson" 
+                lastName = "mayer" 
+                instagram="gersonmayer" 
+                jobTitle="Engeneer"
+                avatar="https://lh3.googleusercontent.com/a-/AAuE7mANQsLaiH0068tLGckWwZys0kFvViZz2Q_atdXTXA=s96"/>
 const element = React.createElement('a', {href:'https://platzi.com'}, 'Ir a platzi')
 const container = document.getElementById ('app')
-const name = "Gerson"
+//const name = "Gerson"
 //ejemplo con jsx directo
-const jsx = <h1>Hola soy,<a href="https://facebook.com">{name}</a>  </h1>
+//const jsx = <h1>Hola soy,<a href="https://facebook.com">{name}</a>  </h1>
 const container2 = document.getElementById ('nombre')
 
 //ReactDOM.render (que vamos a renderizar, donde lo vamos a renderizar)
