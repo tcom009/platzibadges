@@ -1,6 +1,6 @@
 import React from 'react'
 import astronauts from '../images/astronauts.svg'
-import stars from '../images/stars.svg'
+
 import platziLogo from '../images/platziconf-logo.svg'
 import './styles/Home.css'
 import {Link} from 'react-router-dom'
@@ -14,7 +14,8 @@ return (
     <div className = "row">
 
             <div className = "Home__col col-12 col-md-4">
-            <img src = {platziLogo}/>
+            <img src = {platziLogo} 
+            alt ="Platzi" />
             
             <br /> 
             <h1 >
@@ -24,7 +25,8 @@ return (
             <Link to ="/badges" className="btn btn-primary"> Iniciar</Link>
             </div>
             <div className= "Home__col col-12 col-md-4">    
-            <img src = {astronauts}/>
+            <img src = {astronauts}
+            alt = "Logo"/>
             </div>
     </div>
     </div>
