@@ -19,7 +19,7 @@ class BadgeForm extends React.Component {
     render (){
         return (
             <div>
-                <h1>Nuevo Asistente</h1>
+                
 
                 <form onSubmit= {this.props.onSubmit} >
 

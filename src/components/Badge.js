@@ -16,11 +16,13 @@ class Badge extends React.Component {
                     <img src={confLogo} alt="Banner"/>
                 </div>
                 <div className="Badge__section-name">
+                    
                     <Gravatar 
                         className ="Badge__avatar"
                         email={this.props.email}
                         alt = {this.props.firstName}
                         />
+                        
                     <h1>
                         {this.props.firstName}<br/> {this.props.lastName}
                     </h1>
