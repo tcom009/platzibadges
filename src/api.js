@@ -33,6 +33,7 @@ const api = {
         method: 'POST',
         body: JSON.stringify(badge),
       });
+      //throw new Error ("El servidor ha fallado")
     },
     read(badgeId) {
       return callApi(`/badges/${badgeId}`);

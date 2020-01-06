@@ -78,7 +78,7 @@ class BadgeForm extends React.Component {
                             className="btn btn-success">
                         Crear
                     </button>
-                        
+                        {this.props.error && <p className= "text-danger">  {this.props.error.message}  </p> }
                 </form>
             </div>
             
