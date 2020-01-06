@@ -8,11 +8,11 @@ class BadgeForm extends React.Component {
     }
 
 
-    handleSubmit = e => {
-        e.preventDefault();
-        console.log('Form was submitted');
-        console.log(this.state);
-    }
+    // handleSubmit = e => {
+    //     e.preventDefault();
+    //     console.log('Form was submitted');
+    //     console.log(this.state);
+    // }
 
 
     
@@ -21,7 +21,7 @@ class BadgeForm extends React.Component {
             <div>
                 <h1>Nuevo Asistente</h1>
 
-                <form onSubmit= {this.handleSubmit} >
+                <form onSubmit= {this.props.onSubmit} >
 
                     <div  className ="form-group">
                     <label>Nombre</label>

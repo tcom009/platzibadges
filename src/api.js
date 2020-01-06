@@ -25,8 +25,8 @@ const api = {
   badges: {
     list() {
       //return []
-      //return callApi('/badges')
-      throw  new Error ('404 No se ha encontrado el contenido solicitado ')
+      return callApi('/badges')
+      //throw  new Error ('404 No se ha encontrado el contenido solicitado ')
     },
     create(badge) {
       return callApi(`/badges`, {
