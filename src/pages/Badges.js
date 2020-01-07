@@ -23,7 +23,7 @@ class Badges extends React.Component {
        this.intervalId = setInterval (this.fetchData, 5000); // Polling para updates automaticos
     }
 
-    componentWillUnMount (){
+    componentWillUnmount (){
         clearInterval (this.intervalId)
     }
 

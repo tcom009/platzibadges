@@ -20,7 +20,8 @@ class BadgeNew extends React.Component{
           avatarUrl:'',
         },
       };
-    
+    //cambia los valores del Badge en tiempo real mientras llenamos el 
+    //formulario
       handleChange = e => {
         this.setState({
           form: {
@@ -30,6 +31,7 @@ class BadgeNew extends React.Component{
         });
       };
 
+      //envia los datos del formularios para que estos sean guardados
       handleSubmit = async e => {
         e.preventDefault ()
         this.setState ({loading: true, error:null})
@@ -64,6 +66,8 @@ class BadgeNew extends React.Component{
             <div className ="container">
                 <div className="row">
                     <div className="col">
+                       
+                       
                         <Badge 
                 firstName={this.state.form.firstName || 'FIRST_NAME'} 
                 lastName = {this.state.form.lastName || 'LAST_NAME'}
