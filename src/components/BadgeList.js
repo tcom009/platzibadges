@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './styles/BadgeItems.css'
+import './styles/BadgeList.css'
 
 import {Link } from 'react-router-dom'
 
@@ -33,13 +33,51 @@ class BadgeItemList extends React.Component {
     }
 }
 
-class BadgeList extends React.Component {
+//custom hook
 
-    render(){
-        if (this.props.badges.length === 0){
+function useSearchBadges (badges){
+   
+    const [query, setQuery] = React.useState ('')
+    
+
+    const [filteredBadges, setFilteredResults]= React.useState (badges)
+    React.useMemo (()=>{
+         const result=   badges.filter(badge =>{
+                return `${badge.firstName} ${badge.lastName}`
+                .toLowerCase()
+                .includes(query.toLowerCase())
+             });
+             setFilteredResults (result)
+
+            },[badges, query])
+    return {query, setQuery, filteredBadges}
+}
+
+
+
+
+function BadgeList (props) {
+
+    const badges = props.badges
+
+    const {query, setQuery, filteredBadges} = useSearchBadges(badges)
+   
+
+        if (filteredBadges.length === 0){
             return (
+                
                 <div>
-                    <h3>No se ha creado ningun badge</h3>
+                    <div className = "form-group">
+                <label>Buscar Badges</label>
+            <input  type="text" 
+                    className="form-control"
+                    value ={query}
+                    onChange = {(e)=>{
+                        setQuery (e.target.value)
+                    }}/>
+
+            </div>
+                    <h3>No se ha encontrado ningun badge</h3>
                 <Link className="btn btn-primary" to ="/badges/new">Crear</Link>
                 </div>
 
@@ -47,15 +85,23 @@ class BadgeList extends React.Component {
         }
         return (
             <div className = "BadgesList container">
-            
+            <div className = "form-group">
+                <label>Buscar Badges</label>
+            <input  type="text" 
+                    className="form-control"
+                    value ={query}
+                    onChange = {(e)=>{
+                        setQuery (e.target.value)
+                    }}/>
+
+            </div>
             <ul className = "list-unstyled">
-                    {this.props.badges.map (badge => {
+                    {filteredBadges.map (badge => {
                         return (
                             <li key = {badge.id} >
                                 <Link 
                                 className ="text-reset text-decoration-none"
-                                to= {`/badges/${badge.id}`}
-                                >
+                                to= {`/badges/${badge.id}`}>
                                     <BadgeItemList badge= {badge}></BadgeItemList>                            
                                 </Link>
                             </li>
@@ -70,6 +116,6 @@ class BadgeList extends React.Component {
 
 
 
-}
+
 
 export default BadgeList   
